@@ -1,6 +1,6 @@
 {
   "name": "@truefit/bach-redux",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "compose your react-redux components in style",
   "main": "lib/index.js",
   "scripts": {

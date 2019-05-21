@@ -14,7 +14,7 @@ export default (actions, conditions) => ({generateNewVariable}) => {
       [USE_ACTIONS]: useActions,
       [actionRef]: actions,
     },
-    initialize: `const ${actionVars} = ${USE_ACTIONS}(${actionRef}, ${conditionCode});`,
+    initialize: `const {${actionVars}} = ${USE_ACTIONS}(${actionRef}, ${conditionCode});`,
     props: actionKeys,
   };
 };
