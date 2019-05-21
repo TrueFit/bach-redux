@@ -1,12 +1,12 @@
-import ReactRedux from 'react-redux';
-import {REACT_REDUX, DISPATCH} from '../util/constants';
+import {useDispatch} from 'react-redux';
+import {DISPATCH} from '../util/constants';
 
 export default () => () => {
   return {
     dependencies: {
-      [REACT_REDUX]: ReactRedux,
+      useDispatch,
     },
-    initialize: `const ${DISPATCH} = ${REACT_REDUX}.useDispatch();`,
+    initialize: `const ${DISPATCH} = useDispatch();`,
     props: [DISPATCH],
   };
 };

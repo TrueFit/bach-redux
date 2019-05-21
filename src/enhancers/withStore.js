@@ -1,12 +1,12 @@
-import ReactRedux from 'react-redux';
-import {REACT_REDUX, STORE} from '../util/constants';
+import {useStore} from 'react-redux';
+import {STORE} from '../util/constants';
 
 export default () => () => {
   return {
     dependencies: {
-      [REACT_REDUX]: ReactRedux,
+      useStore,
     },
-    initialize: `const ${STORE} = ${REACT_REDUX}.useStore();`,
+    initialize: `const ${STORE} = useStore();`,
     props: [STORE],
   };
 };

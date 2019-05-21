@@ -1,9 +1,11 @@
-# bach-redux
+# @truefit/bach-redux
 
 ## Enhancers
 
 ### withSelector
 adds back in props
+
+### withAction
 
 ### withActions
 argument around why we are keeping this
