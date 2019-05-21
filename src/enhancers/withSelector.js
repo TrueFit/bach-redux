@@ -1,6 +1,5 @@
 import {PROPS, generateConditionCode} from '@truefit/bach';
-import ReactRedux from 'react-redux';
-import {REACT_REDUX} from '../util/constants';
+import {useSelector} from 'react-redux';
 
 export default (selectorName, fn, conditions) => ({generateNewVariable}) => {
   const fnName = generateNewVariable();
@@ -8,13 +7,15 @@ export default (selectorName, fn, conditions) => ({generateNewVariable}) => {
 
   return {
     dependencies: {
-      [ReactRedux]: ReactRedux,
+      useSelector,
       [fnName]: fn,
     },
-    initialize: `const ${selectorName} = ${REACT_REDUX}.useSelector(
-      function (state) {
-        return ${fnName}(state, ${PROPS});
-      }, [${conditionCode}]);
+    initialize: `
+      const ${selectorName} = useSelector(
+        function (state) {
+          return ${fnName}(state, ${PROPS});
+        }, [${conditionCode}]
+      );
     `,
     props: [selectorName],
   };

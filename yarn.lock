@@ -707,10 +707,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@truefit/bach@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@truefit/bach/-/bach-0.1.5.tgz#a7285841cd7adf5835095aa7681b517041115efd"
-  integrity sha512-mmcwUF+zlj8oOMhJFdGTJ1eHYaLDnHcu1wIFJnweUP3yGclK2ljtjmhQWgLNzKEiZ+I8VF9j3DuA64NotVDy2A==
+"@truefit/bach@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@truefit/bach/-/bach-0.1.6.tgz#23669e2a16096b5123e542736f35ab1d4bbe2dd6"
+  integrity sha512-dqAA3/qjJckJ6iPqiW2vnDlD0lm6ghFktHIT6lsGitfZoZmhNPhWQqvDI7w+Zg88CJ8kTYRXFtUNqB5Rthh61w==
   dependencies:
     react "^16.8.6"
 
@@ -2788,10 +2788,10 @@ react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-redux@^7.0.3:
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.0.3.tgz#983c5a6de81cb1e696bd1c090ba826545f9170f1"
-  integrity sha512-vYZA7ftOYlDk3NetitsI7fLjryt/widNl1SLXYvFenIpm7vjb4ryK0EeFrgn62usg5fYkyIAWNUPKnwWPevKLg==
+react-redux@^7.1.0-alpha.4:
+  version "7.1.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.1.0-alpha.5.tgz#762336fd7a941ed5503ee4890e2324ce29ec0488"
+  integrity sha512-bLDaXcNWcoiXKIBz/waf+oImYIBhR8h1YgXo4GKgBEyMJXtMqZkkNqD4w7JNlTsN2Xxo2/1E4akcmAo+wzJAnw==
   dependencies:
     "@babel/runtime" "^7.4.3"
     hoist-non-react-statics "^3.3.0"
