@@ -2,7 +2,7 @@
 
 This library brings redux connectivity to components composed with [@truefit/bach](https://github.com/truefit/bach) allowing you to add actions and selectors directly in your enhancer chain, rather than needing an extra HOC for connect.
 
-*This library is based on the react-redux hooks found in the current alpha release, so you will need to be using that version as well (https://react-redux.js.org/next/api/hooks)*
+_This library is based on the react-redux hooks found in the current alpha release, so you will need to be using that version as well (https://react-redux.js.org/next/api/hooks)_
 
 ## Enhancers
 
@@ -134,7 +134,7 @@ export default compose(withStore())(WithStore);
 
 _React-Redux Hook_
 
-[useDispath](https://react-redux.js.org/next/api/hooks#usedispatch)
+[useDispatch](https://react-redux.js.org/next/api/hooks#usedispatch)
 
 ### withSelector
 
@@ -201,7 +201,9 @@ const WithStore = ({store}) => (
   </div>
 );
 
-export default compose(withStore())(WithStore);
+export default compose(
+  withStore(),
+)(WithStore);
 ```
 
 _React-Redux Hook_
