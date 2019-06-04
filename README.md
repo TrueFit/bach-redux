@@ -116,20 +116,26 @@ _Example_
 ```
 import React from 'react';
 import {compose} from '@truefit/bach';
-import {withStore} from '@truefit/bach-redux';
+import {withDispatch} from '@truefit/bach-redux';
+import {ADD_TODO} from '../actions';
 
-const WithStore = ({store}) => (
+const WithDispatch = ({dispatch}) => (
   <div>
-    <h1>withStore</h1>
-    <ul>
-      {store.getState().features.bachRedux.todo.map(todo => (
-        <li key={todo}>{todo}</li>
-      ))}
-    </ul>
+    <h1>withDispatch</h1>
+    <button
+      onClick={() => {
+        dispatch({
+          type: ADD_TODO,
+          payload: 'New ToDo from withDispatch',
+        });
+      }}
+    >
+      Click Me
+    </button>
   </div>
 );
 
-export default compose(withStore())(WithStore);
+export default compose(withDispatch())(WithDispatch);
 ```
 
 _React-Redux Hook_
