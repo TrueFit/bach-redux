@@ -4,6 +4,18 @@ This library brings redux connectivity to components composed with [@truefit/bac
 
 _This library is based on the react-redux hooks found in the current 7.1 release, so you will need to be using that version as well_
 
+## Installation
+
+```
+npm install @truefit/bach-redux redux react-redux
+```
+
+or
+
+```
+yarn add @truefit/bach-redux redux react-redux
+```
+
 ## Enhancers
 
 ### withAction
