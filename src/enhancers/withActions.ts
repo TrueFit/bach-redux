@@ -1,8 +1,17 @@
-import {generateConditionCode, generateAssignments} from '@truefit/bach';
+import {
+  generateConditionCode,
+  generateAssignments,
+  DependencyList,
+  EnhancerContext,
+  EnhancerResult,
+} from '@truefit/bach';
+import {ActionCreatorsMapObject} from 'redux';
 import {useActions} from '../hooks';
-import {USE_ACTIONS} from '../util/constants';
+import {USE_ACTIONS} from '../constants';
 
-export default (actions, conditions) => ({generateNewVariable}) => {
+export default <T>(actions: ActionCreatorsMapObject, conditions?: DependencyList<T>) => ({
+  generateNewVariable,
+}: EnhancerContext): EnhancerResult => {
   const actionKeys = Object.keys(actions);
   const actionRef = generateNewVariable();
   const valueRef = generateNewVariable();

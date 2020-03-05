@@ -1,7 +1,8 @@
 import {useDispatch} from 'react-redux';
-import {DISPATCH} from '../util/constants';
+import {EnhancerResult} from '@truefit/bach';
+import {DISPATCH} from '../constants';
 
-export default () => () => {
+export default () => (): EnhancerResult => {
   return {
     dependencies: {
       useDispatch,
