@@ -1,7 +1,8 @@
 import {useStore} from 'react-redux';
-import {STORE} from '../util/constants';
+import {EnhancerResult} from '@truefit/bach';
+import {STORE} from '../constants';
 
-export default () => () => {
+export default () => (): EnhancerResult => {
   return {
     dependencies: {
       useStore,

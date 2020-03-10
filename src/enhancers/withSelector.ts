@@ -1,7 +1,18 @@
-import {PROPS, generateConditionCode} from '@truefit/bach';
+import {
+  PROPS,
+  generateConditionCode,
+  EnhancerContext,
+  EnhancerResult,
+  DependencyList,
+} from '@truefit/bach';
 import {useSelector} from 'react-redux';
+import {Selector} from '../types';
 
-export default (selectorName, fn, conditions) => ({generateNewVariable}) => {
+export default <T, K>(
+  selectorName: keyof T,
+  fn: Selector<T, K>,
+  conditions?: DependencyList<T>,
+) => ({generateNewVariable}: EnhancerContext): EnhancerResult => {
   const fnName = generateNewVariable();
   const conditionCode = generateConditionCode(conditions);
 
@@ -17,6 +28,6 @@ export default (selectorName, fn, conditions) => ({generateNewVariable}) => {
         }, [${conditionCode}]
       );
     `,
-    props: [selectorName],
+    props: [selectorName as string],
   };
 };
