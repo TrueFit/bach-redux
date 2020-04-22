@@ -6,11 +6,10 @@ import {
   DependencyList,
 } from '@truefit/bach';
 import {useSelector} from 'react-redux';
-import {Selector} from '../types';
 
 export default <T, K>(
   selectorName: keyof T,
-  fn: Selector<T, K>,
+  fn: (...args: never) => K,
   conditions?: DependencyList<T>,
 ) => ({generateNewVariable}: EnhancerContext): EnhancerResult => {
   const fnName = generateNewVariable();
