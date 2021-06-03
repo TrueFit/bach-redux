@@ -1,6 +1,6 @@
 {
   "name": "@truefit/bach-redux",
-  "version": "2.0.3",
+  "version": "2.0.5",
   "description": "compose your react-redux components in style",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -26,10 +26,10 @@
   ],
   "homepage": "https://github.com/TrueFit/bach-redux#readme",
   "peerDependencies": {
-    "@truefit/bach": "^2.x",
-    "react": "^16.x",
-    "react-redux": "^7.x",
-    "redux": "^4.x"
+    "@truefit/bach": "2.x",
+    "react": "16.x",
+    "react-redux": "7.x",
+    "redux": "4.x"
   },
   "devDependencies": {
     "@truefit/bach": "^2.0.9",
