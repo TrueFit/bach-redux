@@ -9,23 +9,24 @@ import {
 import {useSelector, shallowEqual} from 'react-redux';
 
 export default <T, K>(
-  selectorName: keyof T,
-  fn: (...args: never) => K,
-  conditions?: DependencyList<T>,
-) => ({generateNewVariable}: EnhancerContext): EnhancerResult => {
-  const fnName = generateNewVariable();
+    selectorName: keyof T,
+    fn: (...args: never) => K,
+    conditions?: DependencyList<T>,
+  ) =>
+  ({generateNewVariable}: EnhancerContext): EnhancerResult => {
+    const fnName = generateNewVariable();
 
-  const equality = `equality_${generateNewVariable()}`;
-  const conditionCode = generateConditionCode(conditions);
+    const equality = `equality_${generateNewVariable()}`;
+    const conditionCode = generateConditionCode(conditions);
 
-  return {
-    dependencies: {
-      useCallback,
-      useSelector,
-      shallowEqual,
-      [fnName]: fn,
-    },
-    initialize: `
+    return {
+      dependencies: {
+        useCallback,
+        useSelector,
+        shallowEqual,
+        [fnName]: fn,
+      },
+      initialize: `
       const ${equality} = useCallback(shallowEqual, [${conditionCode}]);
       const ${selectorName} = useSelector(
         function (state) {
@@ -33,6 +34,6 @@ export default <T, K>(
         }, ${equality}
       );
     `,
-    props: [selectorName as string],
+      props: [selectorName as string],
+    };
   };
-};
